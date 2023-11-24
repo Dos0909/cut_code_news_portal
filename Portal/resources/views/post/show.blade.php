@@ -45,19 +45,23 @@
 
             <div>
                 <section class="rounded-b-lg mt-4">
+                    @auth
                     <form method="POST" action="">
 
                         <textarea name="text"
                             class="w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl border border-red-500"
                             placeholder="Ваш комментарий..." spellcheck="false">
 
-                        </textarea>
+                                                </textarea>
 
+                        @error('text')
                         <p class="text-red-500">Ошибка</p>
+                        @enderror
 
                         <button type="submit"
                             class="font-bold py-2 px-4 w-full bg-purple-400 text-lg text-white shadow-md rounded-lg ">Написать</button>
                     </form>
+                    @endauth
 
                     <div id="task-comments" class="pt-4">
 

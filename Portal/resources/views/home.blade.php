@@ -20,15 +20,27 @@
         </div>
 
         <div class="sm:mb-0 self-center">
-            @guest
-            <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
-            @endguest
+
+            <div class="flex justify-between">
 
 
-            @auth
-            <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Выйти</a>
-            @endauth
+                <a href="{{route('admin.index')}}"
+                    class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Админ
+                    Панель</a>
 
+                @guest
+                <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
+                @endguest
+
+                @auth
+                <form action="{{route('logout')}}" method="post">
+                    @csrf
+                    <button
+                        class="outline-none text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Выйти</button>
+                </form>
+                @endauth
+
+            </div>
         </div>
     </nav>
 
@@ -94,9 +106,11 @@
             </div>
         </div> --}}
 
-        {{$posts->links()}}
+
 
     </div>
+
+    {{$posts->links()}}
 </body>
 
 </html>
