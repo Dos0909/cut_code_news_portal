@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
@@ -40,7 +40,7 @@
         <div class="px-4 py-8 max-w-xl">
             <div class="bg-white shadow-2xl">
                 <div>
-                    <a href="#">
+                    <a href="{{route('post.show', $post)}}">
                         <img src="{{$post->image}}" alt="{{$post->title}}" />
                     </a>
                 </div>
@@ -93,6 +93,8 @@
                 </div>
             </div>
         </div> --}}
+
+        {{$posts->links()}}
 
     </div>
 </body>
